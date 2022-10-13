@@ -140,14 +140,14 @@ function App() {
       .once("error", (err) => {
         console.log(err);
         setFeedback("Sorry, something went wrong please try again later.");
-        setClaimingNft(true);
+        setClaimingNft(false);
       })
       .then((receipt) => {
         console.log(receipt);
         setFeedback(
           `WOW, the ${CONFIG.NFT_NAME} is yours! go visit Opensea.io to view it.`
         );
-        setClaimingNft(true);
+        setClaimingNft(false);
         dispatch(fetchData(blockchain.account));
       });
   };
